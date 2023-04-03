@@ -13,5 +13,5 @@ jobs:
       uses: peter-evans/repository-dispatch@v1
       with:
         token: ${{ secrets.TOKEN }}
-        repository: owner/repo2
+        repository: https://github.com/rgangaderan/qa-automation2.git
         event-type: run-workflow
