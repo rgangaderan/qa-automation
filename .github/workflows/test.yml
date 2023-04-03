@@ -1,1 +1,17 @@
-123
+name: Run workflow
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Trigger second repository workflow
+      uses: peter-evans/repository-dispatch@v1
+      with:
+        token: ${{ secrets.TOKEN }}
+        repository: owner/repo2
+        event-type: run-workflow
